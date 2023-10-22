@@ -7,7 +7,8 @@ class main:
         # Creating arguments
         parser = argparse.ArgumentParser(add_help=True)
         parser.add_argument("-v", "--version", help="Show program's version number and exit.", version=metadata.get("name") + " " + metadata.get("version"), action="version")
-        parser.add_argument("-cu", "--check-update", help="Checking for update at launch.", dest="need_check_update", action="store_true")
+        parser.add_argument("-c", "--check-update", help="Checking for update at launch.", dest="need_check_update", action="store_true")
+        parser.add_argument("-s", "--server-mode", help="Will enable the server mode (for example it will not launch file explorer to chose location).", dest="server-mode",action="store_true")
         parser.add_argument("-p", "--port", help="Port where flask launch.", dest="flask_port", action="store", default="80")
         args = parser.parse_args()
 
