@@ -1,6 +1,5 @@
 import argparse, sys, socket, platform, os, GPUtil, cpuinfo
-from flask import Flask, render_template
-from easyai import metadata
+from easyai import metadata, webapp
 
 class main:
     def __init__(self):
@@ -47,7 +46,7 @@ class main:
         system_info = {"os":self.actual_os, "os_logo":self.os_logo,"cpu":cpu_info, "gpu":gpu_info ,"flask_port":args.flask_port, "server_mode":args.server_mode}
 
         # Running main program
-        Webapp(system_info)
+        webapp.Webapp(system_info)
 
     def internet_on(self, host="8.8.8.8", port=53, timeout=3):
         """
@@ -83,26 +82,3 @@ class main:
                         print(f"Erreur lors de la lecture du fichier {init_file_path}: {e}")
         metadata_list = sorted(metadata_list, key=lambda x: x['name'])
         return metadata_list
-
-
-class Webapp():
-    def __init__(self, system_info):
-        app = Flask(__name__, template_folder='htdocs', static_folder="htdocs/static")
-        @app.route("/")
-        def index(*self):
-            return render_template("index.html", system_info=system_info)
-
-        @app.route("/download")
-        def download(*self):
-            metadata_list = main.check_scripts()
-            return render_template("download.html", metadata_list=metadata_list, system_info=system_info)
-
-        @app.route("/settings")
-        def settings(*self):
-            return render_template("settings.html", system_info=system_info)
-
-        @app.route("/exit")
-        def exit(*self):
-            return render_template("exit.html")
-
-        app.run(host="0.0.0.0", port=system_info['flask_port'], debug=True)
