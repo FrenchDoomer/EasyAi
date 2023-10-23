@@ -1,11 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyAI</title>
-    <link rel="icon" href="img/favicon.ico" />
-</head>
-<body>
-</body>
-</html>
+{% extends "template/base.html" %}
+{% block content %}
+<section class="w-full h-32 bg-zinc-800 p-5">
+    <p class="font-mono text-2xl font-semibold text-slate-200">EasyAI</p>
+    <div class="ml-5">
+        <i class="bi {{os_logo}}" style="font-size: 40px; color: rgb(226, 232, 240);"></i>
+    </div>
+    
+</section>
+<section class="w-full flex-1 bg-zinc-800">
+    <div class="m-5">
+        <div class="bg-zinc-700 hover:bg-zinc-600 transition-colors h-20 mb-5 rounded-lg flex">
+          <div class="w-20 h-full flex items-center justify-center">
+            <i class="bi bi-download" style="font-size: 40px; color: rgb(226, 232, 240);"></i>
+          </div>
+          <div class="h-full max-w-md flex flex-col justify-center pl-4">
+            <p class="font-mono text-lg font-semibold text-slate-200">Install softwares</p>
+            <p class="font-mono text-base font-semibold text-slate-400">Here you will see what you can install.</p>
+          </div>
+          <div class="w-20 h-full flex items-center justify-center ml-auto">
+            <a href="#"><i class="bi bi-chevron-right" style="font-size: 40px; color: rgb(226, 232, 240);"></i></a> 
+          </div>
+        </div>
+
+        <div class="bg-zinc-700 hover:bg-zinc-600 transition-colors h-20 mb-5 rounded-lg flex">
+            <div class="w-20 h-full flex items-center justify-center">
+              <i class="bi bi-gear-wide" style="font-size: 40px; color: rgb(226, 232, 240);"></i>
+            </div>
+            <div class="h-full max-w-md flex flex-col justify-center pl-4">
+              <p class="font-mono text-lg font-semibold text-slate-200">Settings</p>
+              <p class="font-mono text-base font-semibold text-slate-400">Here you can adjust what you want.</p>
+            </div>
+            <div class="w-20 h-full flex items-center justify-center ml-auto">
+              <a href="#"><i class="bi bi-chevron-right" style="font-size: 40px; color: rgb(226, 232, 240);"></i></a> 
+            </div>
+          </div>
+
+          <div class="bg-zinc-700 hover:bg-zinc-600 transition-colors h-20 mb-5 rounded-lg flex">
+            <div class="w-20 h-full flex items-center justify-center">
+              <i class="bi bi-window-x" style="font-size: 40px; color: rgb(226, 232, 240);"></i>
+            </div>
+            <div class="h-full max-w-md flex flex-col justify-center pl-4">
+              <p class="font-mono text-lg font-semibold text-slate-200">Quit</p>
+            </div>
+            <div class="w-20 h-full flex items-center justify-center ml-auto">
+              <a href="#"><i class="bi bi-chevron-right" style="font-size: 40px; color: rgb(226, 232, 240);"></i></a> 
+            </div>
+          </div>
+    </div>
+
+</section>
+{% endblock %}

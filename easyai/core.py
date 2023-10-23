@@ -1,5 +1,5 @@
-import argparse, sys, socket
-from flask import Flask, render_template
+import argparse, sys, socket, platform
+from flask import Flask, render_template, url_for, send_from_directory
 from easyai import metadata
 
 class main:
@@ -22,8 +22,16 @@ class main:
         else:
             print("run")
 
+        # Checking os
+        if self.detect_os() == "macOS":
+            os_logo = "os-logo/macos.png"
+        elif self.detect_os() == "Windows":
+            os_logo = "bi-windows"
+        elif self.detect_os() == "Linux":
+            os_logo = "os-logo/linux.png"
+
         # Running main program
-        Webapp(args.flask_port)
+        Webapp(args.flask_port, os_logo)
 
     def internet_on(self, host="8.8.8.8", port=53, timeout=3):
         """
@@ -39,12 +47,15 @@ class main:
             print(ex)
             return False
 
+    def detect_os(self):
+        return platform.system()
+
 class Webapp():
-    def __init__(self, flask_port):
-        app = Flask(__name__, template_folder='htdocs')
-
+    def __init__(self, flask_port, os_logo):
+        app = Flask(__name__, template_folder='htdocs', static_folder="htdocs/static")
         @app.route("/")
-        def index():
-            return render_template("index.html", flask_port=flask_port)
+        def index(*self):
+            return render_template("index.html", flask_port=flask_port, os_logo=os_logo)
 
-        app.run(host="0.0.0.0", port=flask_port)
+
+        app.run(host="0.0.0.0", port=flask_port, debug=True)

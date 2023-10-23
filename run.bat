@@ -1,0 +1,1 @@
+E:\EasyAI\.venv\Scripts\python.exe run.py
