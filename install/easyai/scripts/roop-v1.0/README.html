@@ -1,0 +1,55 @@
+<h2 class="code-line" data-line-start=0 data-line-end=1 ><a id="This_project_has_been_discontinued_0"></a>This project has been discontinued</h2>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Yes, you can still use this software. It just won’t recieve any updates now.</p>
+<blockquote>
+<p class="has-line-data" data-line-start="4" data-line-end="6">The reason behind shutting the project down is that a developer with write access to the code published a <a href="https://github.com/s0md3v/roop/commit/cf7ba1caf932e8c9f39d972100f74022e7372c27">problematic video</a> to the documentation of the project. This happened while I was taking a break from the project in July-Aug 2023. It went unnoticed for 2 weeks until someone reached out to me to talk about this project. It was a complete breach of trust for me and I decided that I do not have the interest or time to oversee the development of a software with such ethical issues.<br>
+I thank all the amazing people who contributed to this project and made what it is in it’s final form.</p>
+</blockquote>
+<h1 class="code-line" data-line-start=7 data-line-end=8 ><a id="Roop_7"></a>Roop</h1>
+<blockquote>
+<p class="has-line-data" data-line-start="9" data-line-end="10">Take a video and replace the face in it with a face of your choice. You only need one image of the desired face. No dataset, no training.</p>
+</blockquote>
+<p class="has-line-data" data-line-start="11" data-line-end="12"><a href="https://github.com/s0md3v/roop/actions?query=workflow:ci"><img src="https://img.shields.io/github/actions/workflow/status/s0md3v/roop/ci.yml.svg?branch=main" alt="Build Status"></a></p>
+<h2 class="code-line" data-line-start=13 data-line-end=14 ><a id="Installation_13"></a>Installation</h2>
+<p class="has-line-data" data-line-start="15" data-line-end="16">Be aware, the installation needs technical skills and is not for beginners. Please do not open platform and installation related issues on GitHub. We have a very helpful <a href="https://discord.com/invite/Y9p4ZQ2sB9">Discord</a> community that will guide you to install roop.</p>
+<p class="has-line-data" data-line-start="17" data-line-end="18"><a href="https://github.com/s0md3v/roop/wiki/1.-Installation">Basic</a> - It is more likely to work on your computer, but will be quite slow</p>
+<p class="has-line-data" data-line-start="19" data-line-end="20"><a href="https://github.com/s0md3v/roop/wiki/2.-Acceleration">Acceleration</a> - Unleash the full potential of your CPU and GPU</p>
+<h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="Usage_22"></a>Usage</h2>
+<p class="has-line-data" data-line-start="24" data-line-end="25">Start the program with arguments:</p>
+<pre><code class="has-line-data" data-line-start="27" data-line-end="50">python run.py [options]
+
+-h, --help                                                                 show this help message and exit
+-s SOURCE_PATH, --source SOURCE_PATH                                       select an source image
+-t TARGET_PATH, --target TARGET_PATH                                       select an target image or video
+-o OUTPUT_PATH, --output OUTPUT_PATH                                       select output file or directory
+--frame-processor FRAME_PROCESSOR [FRAME_PROCESSOR ...]                    frame processors (choices: face_swapper, face_enhancer, ...)
+--keep-fps                                                                 keep target fps
+--keep-frames                                                              keep temporary frames
+--skip-audio                                                               skip target audio
+--many-faces                                                               process every face
+--reference-face-position REFERENCE_FACE_POSITION                          position of the reference face
+--reference-frame-number REFERENCE_FRAME_NUMBER                            number of the reference frame
+--similar-face-distance SIMILAR_FACE_DISTANCE                              face distance used for recognition
+--temp-frame-format {jpg,png}                                              image format used for frame extraction
+--temp-frame-quality [0-100]                                               image quality used for frame extraction
+--output-video-encoder {libx264,libx265,libvpx-vp9,h264_nvenc,hevc_nvenc}  encoder used for the output video
+--output-video-quality [0-100]                                             quality used for the output video
+--max-memory MAX_MEMORY                                                    maximum amount of RAM in GB
+--execution-provider {cpu} [{cpu} ...]                                     available execution provider (choices: cpu, ...)
+--execution-threads EXECUTION_THREADS                                      number of execution threads
+-v, --version                                                              show program's version number and exit
+</code></pre>
+<h3 class="code-line" data-line-start=52 data-line-end=53 ><a id="Headless_52"></a>Headless</h3>
+<p class="has-line-data" data-line-start="54" data-line-end="55">Using the <code>-s/--source</code>, <code>-t/--target</code> and <code>-o/--output</code> argument will run the program in headless mode.</p>
+<h2 class="code-line" data-line-start=57 data-line-end=58 ><a id="Disclaimer_57"></a>Disclaimer</h2>
+<p class="has-line-data" data-line-start="59" data-line-end="60">This software is designed to contribute positively to the AI-generated media industry, assisting artists with tasks like character animation and models for clothing.</p>
+<p class="has-line-data" data-line-start="61" data-line-end="62">We are aware of the potential ethical issues and have implemented measures to prevent the software from being used for inappropriate content, such as nudity.</p>
+<p class="has-line-data" data-line-start="63" data-line-end="64">Users are expected to follow local laws and use the software responsibly. If using real faces, get consent and clearly label deepfakes when sharing. The developers aren’t liable for user actions.</p>
+<h2 class="code-line" data-line-start=66 data-line-end=67 ><a id="Licenses_66"></a>Licenses</h2>
+<p class="has-line-data" data-line-start="68" data-line-end="69">Our software uses a lot of third party libraries as well pre-trained models. The users should keep in mind that these third party components have their own license and terms, therefore our license is not being applied.</p>
+<h2 class="code-line" data-line-start=71 data-line-end=72 ><a id="Credits_71"></a>Credits</h2>
+<ul>
+<li class="has-line-data" data-line-start="73" data-line-end="74"><a href="https://github.com/deepinsight">deepinsight</a> for their <a href="https://github.com/deepinsight/insightface">insightface</a> project which provided a well-made library and models.</li>
+<li class="has-line-data" data-line-start="74" data-line-end="75">all developers behind the libraries used in this project</li>
+</ul>
+<h2 class="code-line" data-line-start=77 data-line-end=78 ><a id="Documentation_77"></a>Documentation</h2>
+<p class="has-line-data" data-line-start="79" data-line-end="80">Read the <a href="https://github.com/s0md3v/roop/wiki">documentation</a> for a deep dive.</p>
