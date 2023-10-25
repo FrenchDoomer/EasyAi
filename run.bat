@@ -1,8 +1,8 @@
 @echo off
 REM ====================================================
 REM ====================================================
-set PYTHON= "E:\EasyAI\.venv\Scripts\python.exe"
-set COMMANDLINE_ARGS= -s -d
+set PYTHON= 
+set COMMANDLINE_ARGS= 
 REM ====================================================
 REM ====================================================
 if not defined PYTHON (set PYTHON=python)
